@@ -70,6 +70,24 @@ LOWL *lowl_create_random(unsigned int size){
     return pointer;
 }
 
+
+void lowl_destroy(LOWL *list){
+    list -> cur = list -> beg;
+     struct OWN* next;
+    
+    while ( (list -> cur) != NULL )
+    {
+        next = list -> cur -> next;
+        free(list -> cur);
+        list -> cur = next;
+    }
+    
+    list -> beg = NULL;
+    list -> cur = NULL;
+};
+
+
+
 int main(int argc, char const *argv[])
 {
     srand(time(NULL));
