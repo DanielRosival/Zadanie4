@@ -326,7 +326,7 @@ int main(int argc, char const *argv[])
     srand(time(NULL));
     
 
-    temp = lowl_create_random(1);
+    temp = lowl_create_random(25);
 
     if (temp == WRONG_SIZE) {
         return CREATION_FAILED;
